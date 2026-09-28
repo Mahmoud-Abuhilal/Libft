@@ -6,7 +6,7 @@
 /*   By: mabuhila <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 10:51:25 by mabuhila          #+#    #+#             */
-/*   Updated: 2026/09/27 16:43:52 by mabuhila         ###   ########.fr       */
+/*   Updated: 2026/09/28 11:56:50 by mabuhila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,9 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (0);
 	words_count = count_words(s, c);
-	result = malloc((words_count + 1) * sizeof(char *));
+	result = ft_calloc((words_count + 1), sizeof(char *));
 	if (!result)
 		return (0);
-	result[words_count] = 0;
 	if (!alo_str(result, s, words_count, c))
 		return (0);
 	return (result);
