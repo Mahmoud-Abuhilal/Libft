@@ -6,18 +6,18 @@
 /*   By: mabuhila <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 10:51:25 by mabuhila          #+#    #+#             */
-/*   Updated: 2026/09/28 11:56:50 by mabuhila         ###   ########.fr       */
+/*   Updated: 2026/09/29 10:39:55 by mabuhila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	free_all(char **result)
+static void	free_all(char **result, size_t size)
 {
 	size_t	i;
 
 	i = 0;
-	while (result[i])
+	while (i < size)
 	{
 		free(result[i]);
 		i++;
@@ -43,7 +43,7 @@ static char	**alo_str(char **result, char const *s, size_t words_count, char c)
 		result[ptr_count] = ft_substr(s, start_index, str_count - start_index);
 		if (!result[ptr_count])
 		{
-			free_all(result);
+			free_all(result, ptr_count);
 			return (0);
 		}
 		ptr_count++;
@@ -84,10 +84,11 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (0);
 	words_count = count_words(s, c);
-	result = ft_calloc((words_count + 1), sizeof(char *));
+	result = malloc(sizeof(char *) * (words_count + 1));
 	if (!result)
 		return (0);
 	if (!alo_str(result, s, words_count, c))
 		return (0);
+	result[words_count] = 0;
 	return (result);
 }
