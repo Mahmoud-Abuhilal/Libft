@@ -6,7 +6,7 @@
 /*   By: mabuhila <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 11:54:40 by mabuhila          #+#    #+#             */
-/*   Updated: 2026/09/29 12:01:30 by mabuhila         ###   ########.fr       */
+/*   Updated: 2026/10/01 17:11:18 by mabuhila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,17 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
+	long	nb;
+	char	digit;
 
-	str = ft_itoa(n);
-	if (!str)
-		return ;
-	write(fd, str, ft_strlen(str));
-	free(str);
+	nb = n;
+	if (nb < 0)
+	{
+		write(fd, "-", 1);
+		nb *= -1;
+	}
+	if (nb >= 10)
+		ft_putnbr_fd(nb / 10, fd);
+	digit = (nb % 10) + '0';
+	write(fd, &digit, 1);
 }
