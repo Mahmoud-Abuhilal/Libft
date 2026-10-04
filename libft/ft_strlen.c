@@ -6,13 +6,15 @@
 /*   By: mabuhila <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 16:58:21 by mabuhila          #+#    #+#             */
-/*   Updated: 2026/09/21 17:03:34 by mabuhila         ###   ########.fr       */
+/*   Updated: 2026/10/04 16:39:33 by mabuhila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
 	while (str[count])

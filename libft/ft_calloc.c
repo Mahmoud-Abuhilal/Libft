@@ -6,7 +6,7 @@
 /*   By: mabuhila <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 13:54:59 by mabuhila          #+#    #+#             */
-/*   Updated: 2026/09/24 14:36:20 by mabuhila         ###   ########.fr       */
+/*   Updated: 2026/10/04 14:07:01 by mabuhila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,12 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	if (nmemb != 0 && size > (SIZE_MAX / nmemb))
+	if (size == 0 || nmemb == 0)
+	{
+		ptr = malloc(0);
+		return (ptr);
+	}
+	if (size > (SIZE_MAX / nmemb))
 		return (0);
 	ptr = malloc(size * nmemb);
 	if (!ptr)
