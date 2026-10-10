@@ -6,7 +6,7 @@
 /*   By: mabuhila <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/30 17:16:28 by mabuhila          #+#    #+#             */
-/*   Updated: 2026/10/01 17:52:01 by mabuhila         ###   ########.fr       */
+/*   Updated: 2026/10/10 16:38:20 by mabuhila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst)
 	{
 		content = f(lst->content);
-		if (!content)
-			return (ft_lstclear(&new, del), NULL);
 		temp = ft_lstnew(content);
 		if (!temp)
 		{
