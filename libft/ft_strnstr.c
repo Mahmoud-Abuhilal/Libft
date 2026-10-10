@@ -6,7 +6,7 @@
 /*   By: mabuhila <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 11:26:24 by mabuhila          #+#    #+#             */
-/*   Updated: 2026/09/24 13:32:58 by mabuhila         ###   ########.fr       */
+/*   Updated: 2026/10/10 12:35:01 by mabuhila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	lit_len = ft_strlen(little);
 	if (!little[0])
 		return ((char *)big);
-	while (big[i] != '\0' && (len - i) >= lit_len)
+	if (len < lit_len)
+		return (0);
+	while (big[i] != '\0' && i <= (len - lit_len))
 	{
 		if (ft_strncmp(&big[i], little, lit_len) == 0)
 			return ((char *)&big[i]);
