@@ -6,7 +6,7 @@
 /*   By: mabuhila <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 16:34:06 by mabuhila          #+#    #+#             */
-/*   Updated: 2026/10/11 13:47:05 by mabuhila         ###   ########.fr       */
+/*   Updated: 2026/10/11 14:12:07 by mabuhila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 # include <unistd.h>
-# include <stddef.h>
 # include <stdlib.h>
 
 typedef struct s_list
