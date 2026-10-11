@@ -6,17 +6,16 @@
 /*   By: mabuhila <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 16:34:06 by mabuhila          #+#    #+#             */
-/*   Updated: 2026/10/01 15:51:19 by mabuhila         ###   ########.fr       */
+/*   Updated: 2026/10/11 12:28:54 by mabuhila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#ifndef LIBFT_H
+#define LIBFT_H
+
 #include <unistd.h>
 #include <stddef.h>
 #include <stdlib.h>
-#include <strings.h>
-#include <string.h>
-#include <stdint.h>
 
 typedef struct s_list
 {
@@ -68,3 +67,4 @@ void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
+#endif
